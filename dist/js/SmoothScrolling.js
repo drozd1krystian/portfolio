@@ -1,5 +1,5 @@
 // Smooth Scrolling
-$(".content .left a").on("click", function(event) {
+$("#nav_bar a").on("click", function (event) {
   if (this.hash !== "") {
     event.preventDefault();
 
@@ -14,14 +14,14 @@ $(".content .left a").on("click", function(event) {
     if (detectmob()) {
       $("html, body").animate(
         {
-          scrollTop: $(hash).offset().top - 100
+          scrollTop: $(hash).offset().top,
         },
         800
       );
     } else {
       $("html, body").animate(
         {
-          scrollTop: $(hash).offset().top - 100
+          scrollTop: $(hash).offset().top,
         },
         800
       );

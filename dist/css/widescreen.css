@@ -192,29 +192,37 @@ body {
   text-align: center;
 }
 
-#skills .cards {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
+#skills .flex_container {
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
 }
 
 #skills .card {
-  width: 33%;
-  min-height: 300px;
+  width: 100%;
+  padding-bottom: 4rem;
   text-align: center;
 }
 
 #skills .list {
-  border-radius: 5px;
-  -webkit-columns: 2;
-          columns: 2;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-top: 1rem;
 }
 
-#skills .icon {
-  color: #007ced;
-  font-size: 2rem;
+#skills .list li img {
+  height: 60px;
+  min-width: 60px;
+  max-width: 150px;
+  margin: 0 2rem;
 }
 
 #projects .project {

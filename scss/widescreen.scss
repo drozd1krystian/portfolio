@@ -4,6 +4,7 @@
 body {
   background: #222222;
 }
+
 .bg_dark {
   color: #797979;
 }
@@ -163,23 +164,25 @@ body {
 }
 
 #skills {
-  .cards {
-    display: flex;
-    flex-wrap: wrap;
+  .flex_container {
+    flex-direction: column;
   }
   .card {
-    width: 33%;
-    min-height: 300px;
+    width: 100%;
+    padding-bottom: 4rem;
     text-align: center;
   }
   .list {
-    border-radius: 5px;
-    columns: 2;
-  }
-
-  .icon {
-    color: #007ced;
-    font-size: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 1rem;
+    li img {
+      height: 60px;
+      min-width: 60px;
+      max-width: 150px;
+      margin: 0 2rem;
+    }
   }
 }
 
