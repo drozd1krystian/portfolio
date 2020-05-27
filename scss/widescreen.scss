@@ -51,6 +51,16 @@ body {
   color: rgba(#007ced, 0.4);
 }
 
+.text_link {
+  color: #007ced;
+}
+
+.icon_bg {
+  background: #fff;
+  padding: 0.5rem;
+  border-radius: 5px;
+}
+
 .section_header {
   position: relative;
   padding-bottom: 1rem;
@@ -191,6 +201,8 @@ body {
     width: 50%;
     border: 2px solid #007ced;
     position: relative;
+    display: flex;
+    flex-direction: column;
     &:nth-child(even) {
       border-left: none;
       border-right: none;
@@ -198,7 +210,7 @@ body {
     &:nth-child(odd) {
       border-left: none;
     }
-    &:nth-child(0n + 3) {
+    &:nth-child(1n + 3) {
       border-top: none;
     }
 
@@ -244,7 +256,7 @@ body {
         left: 0;
         width: 100%;
         height: 0;
-        background: rgba(#000, 0.4);
+        background: rgba(#000, 0.7);
         opacity: 0;
         transition: all 0.2s ease;
         z-index: 1;
@@ -271,7 +283,7 @@ body {
       }
       .photo::after {
         opacity: 1;
-        height: 100%;
+        height: calc(100% - 2px);
       }
     }
   }
