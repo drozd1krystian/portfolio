@@ -26,7 +26,7 @@
     background: #333;
     justify-content: center;
     align-items: center;
-    transition: all 0.5s ease-in-out;
+    transition: all 0.3s ease-in-out;
     z-index: 102;
     overflow: hidden;
   }
@@ -36,6 +36,15 @@
 
   #nav_bar .links .link:hover::after {
     display: none;
+  }
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
   }
 
   #nav_bar .links a {
@@ -52,6 +61,7 @@
   #nav_bar .active {
     height: 100vh;
     width: 100%;
+    transform: rotate(360deg);
   }
   .toggle .line-1 {
     transform: rotate(-45deg) translate(-7px, 8px);
