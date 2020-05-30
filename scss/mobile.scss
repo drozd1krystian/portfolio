@@ -1,2 +1,46 @@
 @media screen and (max-width: 1024px) {
+  #nav_bar {
+    padding: 0.5rem 1rem;
+  }
+  .about_content {
+    .disc {
+      width: 100%;
+    }
+  }
+  .p3 {
+    padding: 3rem 1rem 1rem 1rem;
+  }
+
+  .px-4 {
+    padding: 0 1rem;
+  }
+  #skills {
+    padding: 0 1rem;
+    .card {
+      padding: 0 0 2rem 0;
+      .list {
+        flex-wrap: wrap;
+        li img {
+          margin: 0 1rem;
+        }
+      }
+    }
+  }
+
+  #projects .project {
+    width: 100%;
+    margin-bottom: 1rem;
+    &:nth-child(even) {
+      border-top: none;
+    }
+    &:nth-child(odd) {
+      border-right: none;
+    }
+  }
+}
+
+@media only screen and (min-device-width: 1024px) and (max-device-width: 1366px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 1.5) {
+  html {
+    font-size: 25px;
+  }
 }
