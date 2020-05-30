@@ -15,37 +15,31 @@
   width: 25px;
 }
 
-@media screen and (max-width: 768px) {
-  .links {
+@media screen and (max-width: 1024px) {
+  #nav_bar .links {
     flex-direction: column;
     position: absolute;
-    bottom: 0;
-    right: 0;
-    width: 60%;
-    height: 100vh;
-    background: #fff;
-    justify-content: space-around;
-    align-items: center;
-    transform: translateX(100%);
-    transition: transform 0.5s ease-in-out;
-    z-index: 100;
-  }
-
-  .links::before {
-    content: "";
-    position: absolute;
-    left: 0%;
     top: 0;
-    width: 100%;
-    height: 88vh;
-    transform: translateX(0%);
-    transition: transform 0.5s ease-in-out;
+    right: 0;
+    width: 0;
+    height: 0;
     background: #333;
-    opacity: 0.4;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.5s ease-in-out;
+    z-index: 102;
+    overflow: hidden;
+  }
+  #nav_bar .links .link {
+    height: initial;
   }
 
-  .links a {
-    color: #333;
+  #nav_bar .links .link:hover::after {
+    display: none;
+  }
+
+  #nav_bar .links a {
+    color: #fff;
   }
   .burger {
     display: block;
@@ -55,11 +49,9 @@
   .burger div {
     transition: all 0.5s ease-in-out;
   }
-  .active {
-    transform: translateX(0%);
-  }
-  .active::before {
-    transform: translateX(-100%);
+  #nav_bar .active {
+    height: 100vh;
+    width: 100%;
   }
   .toggle .line-1 {
     transform: rotate(-45deg) translate(-7px, 8px);
