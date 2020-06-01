@@ -65,6 +65,19 @@ body {
   font-size: 1.3rem;
 }
 
+.btn {
+  border: 2px solid #007ced;
+  color: #fff;
+  border-radius: 20px;
+  padding: 0.7rem 2rem;
+  transition: all 0.3s ease;
+  background: transparent;
+  cursor: pointer;
+  &:hover {
+    background: #007ced;
+  }
+}
+
 .section_header {
   position: relative;
   padding-bottom: 1rem;
@@ -305,6 +318,55 @@ body {
         opacity: 1;
         height: calc(100% - 2px);
       }
+    }
+  }
+}
+
+#contact {
+  .flex_container {
+    align-items: center;
+    width: 100%;
+    justify-content: center;
+  }
+  form {
+    padding: 2rem;
+    border-radius: 10px;
+    width: 50%;
+    .field {
+      margin-bottom: 20px;
+      position: relative;
+      .label {
+        color: #fff;
+        position: absolute;
+        transform: translateY(1rem);
+        transform-origin: 0%;
+        left: 0;
+        z-index: -1;
+        padding: 0 1rem;
+        transition: all 0.3s ease;
+      }
+      .input {
+        width: 100%;
+        border-radius: 10px;
+        border: 2px solid #797979;
+        background: transparent;
+        padding: 1rem;
+        resize: none;
+        margin-bottom: 20px;
+        position: relative;
+        transition: all 0.3s ease;
+        outline: #007ced;
+        &:focus {
+          border: 2px solid #007ced;
+        }
+      }
+      &:focus-within .label,
+      .input:not(:placeholder-shown) + .label {
+        transform: scale(0.8) translate(-1rem, -2rem);
+      }
+    }
+    button {
+      float: right;
     }
   }
 }

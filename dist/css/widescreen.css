@@ -68,6 +68,21 @@ body {
   font-size: 1.3rem;
 }
 
+.btn {
+  border: 2px solid #007ced;
+  color: #fff;
+  border-radius: 20px;
+  padding: 0.7rem 2rem;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+  background: transparent;
+  cursor: pointer;
+}
+
+.btn:hover {
+  background: #007ced;
+}
+
 .section_header {
   position: relative;
   padding-bottom: 1rem;
@@ -386,4 +401,67 @@ body {
 #projects .project:hover .photo::after {
   opacity: 1;
   height: calc(100% - 2px);
+}
+
+#contact .flex_container {
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 100%;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+#contact form {
+  padding: 2rem;
+  border-radius: 10px;
+  width: 50%;
+}
+
+#contact form .field {
+  margin-bottom: 20px;
+  position: relative;
+}
+
+#contact form .field .label {
+  color: #fff;
+  position: absolute;
+  -webkit-transform: translateY(1rem);
+          transform: translateY(1rem);
+  -webkit-transform-origin: 0%;
+          transform-origin: 0%;
+  left: 0;
+  z-index: -1;
+  padding: 0 1rem;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+
+#contact form .field .input {
+  width: 100%;
+  border-radius: 10px;
+  border: 2px solid #797979;
+  background: transparent;
+  padding: 1rem;
+  resize: none;
+  margin-bottom: 20px;
+  position: relative;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+  outline: #007ced;
+}
+
+#contact form .field .input:focus {
+  border: 2px solid #007ced;
+}
+
+#contact form .field:focus-within .label,
+#contact form .field .input:not(:placeholder-shown) + .label {
+  -webkit-transform: scale(0.8) translate(-1rem, -2rem);
+          transform: scale(0.8) translate(-1rem, -2rem);
+}
+
+#contact form button {
+  float: right;
 }
