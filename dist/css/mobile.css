@@ -34,10 +34,18 @@
   #projects .project:nth-child(odd) {
     border-right: none;
   }
+  #contact form {
+    width: 100%;
+    padding: 0 0 2rem 0;
+  }
+  #contact form .field:last-of-type {
+    margin-bottom: 0;
+  }
 }
 
 @media only screen and (min-device-width: 1024px) and (max-device-width: 1366px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 1.5) {
-  html {
+  .text,
+  #contact form {
     font-size: 25px;
   }
 }
