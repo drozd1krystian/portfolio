@@ -228,10 +228,11 @@ body {
     display: flex;
     flex-direction: column;
     &:nth-child(even) {
-      border-left: none;
+      border-left: 1px solid #007ced;
       border-right: none;
     }
     &:nth-child(odd) {
+      border-right: 1px solid #007ced;
       border-left: none;
     }
     &:nth-child(1n + 3) {
@@ -250,7 +251,6 @@ body {
       width: 100%;
       opacity: 0;
     }
-
     .photo {
       position: relative;
       img {
@@ -316,7 +316,7 @@ body {
       }
       .photo::after {
         opacity: 1;
-        height: calc(100% - 2px);
+        height: calc(100% - 4px);
       }
     }
   }

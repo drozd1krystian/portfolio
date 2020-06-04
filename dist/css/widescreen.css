@@ -278,11 +278,12 @@ body {
 }
 
 #projects .project:nth-child(even) {
-  border-left: none;
+  border-left: 1px solid #007ced;
   border-right: none;
 }
 
 #projects .project:nth-child(odd) {
+  border-right: 1px solid #007ced;
   border-left: none;
 }
 
@@ -400,7 +401,7 @@ body {
 
 #projects .project:hover .photo::after {
   opacity: 1;
-  height: calc(100% - 2px);
+  height: calc(100% - 4px);
 }
 
 #contact .flex_container {
