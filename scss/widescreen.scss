@@ -67,14 +67,24 @@ body {
   border: 2px solid #007ced;
   color: #fff;
   border-radius: 20px;
-  padding: 0.7rem 2rem;
+  padding: 0.7rem 3rem;
   transition: all 0.3s ease;
   background: transparent;
   cursor: pointer;
+  outline: none;
+  font-size: 1rem;
   &:hover {
     background: #007ced;
   }
 }
+
+.btn_light {
+  border: 2px solid #797979;
+  &:hover {
+    background: #797979;
+  }
+}
+
 .container {
   margin: 0;
 }
@@ -321,50 +331,21 @@ body {
 }
 
 #contact {
+  padding-bottom: 5rem;
   .flex_container {
     align-items: center;
     width: 100%;
     justify-content: center;
+    form .btn {
+      margin-right: 20px;
+    }
   }
-  form {
-    padding: 2rem;
-    border-radius: 10px;
-    width: 50%;
-    .field {
-      margin-bottom: 20px;
-      position: relative;
-      .label {
-        color: #fff;
-        position: absolute;
-        transform: translateY(1rem);
-        transform-origin: 0%;
-        left: 0;
-        z-index: -1;
-        padding: 0 1rem;
-        transition: all 0.3s ease;
-      }
-      .input {
-        width: 100%;
-        border-radius: 10px;
-        border: 2px solid #797979;
-        background: transparent;
-        padding: 1rem;
-        resize: none;
-        margin-bottom: 20px;
-        position: relative;
-        transition: all 0.3s ease;
-        outline: #007ced;
-        &:focus {
-          border: 2px solid #007ced;
-        }
-      }
-      &:focus-within .label,
-      .input:not(:placeholder-shown) + .label {
-        transform: scale(0.8) translate(-1rem, -2rem);
-      }
-    }
-    button {
-      float: right;
-    }
+}
+
+#footer {
+  border-top: 2px solid #797979;
+  span {
+    float: right;
+    padding: 1rem;
   }
 }

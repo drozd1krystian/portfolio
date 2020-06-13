@@ -34,11 +34,10 @@
   #projects .project:nth-child(odd) {
     border-right: none;
   }
-  #contact form {
-    width: 100%;
-    padding: 0 0 2rem 0;
+  #contact {
+    padding-bottom: 2rem;
   }
-  #contact form .field:last-of-type {
-    margin-bottom: 0;
+  #contact h3 {
+    font-size: 1rem;
   }
 }
