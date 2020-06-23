@@ -263,6 +263,22 @@ body {
   display: flex;
   -webkit-transition: all 0.5s ease;
   transition: all 0.5s ease;
+  will-change: transform;
+  position: relative;
+  overflow: scroll;
+  overflow-y: hidden;
+}
+
+#skills .flex_container > div::-webkit-scrollbar {
+  width: 0px;
+  /* Remove scrollbar space */
+  background: transparent;
+  /* Optional: just make scrollbar invisible */
+}
+
+#skills .flex_container > div.active {
+  cursor: -webkit-grabbing;
+  cursor: grabbing;
 }
 
 #skills .card {
@@ -286,8 +302,8 @@ body {
 
 #skills .slide .line {
   display: inline-block;
-  width: 1.1rem;
-  height: 0.3rem;
+  width: 1.4rem;
+  height: 0.4rem;
   background: #797979;
   cursor: pointer;
   -webkit-transition: all 0.2s ease;
@@ -300,7 +316,7 @@ body {
 
 #skills .slide .activeSlide {
   background: #007ced;
-  width: 1.8rem;
+  width: 2rem;
 }
 
 #skills .list {

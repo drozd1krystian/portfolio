@@ -16,8 +16,10 @@
   }
   #skills {
     .flex_container {
-      overflow: hidden;
       margin-left: -1rem;
+      & > div {
+        overflow: auto;
+      }
     }
     .card {
       padding: 0 0 2rem 0;
