@@ -33,27 +33,30 @@ $(".line").on("click", function (e) {
   let amount = width * id;
 
   $(slider).animate({ scrollLeft: amount }, 900);
-
-  Array.from(slideBtn).forEach((el) => {
-    if (el.classList.contains("activeSlide"))
-      el.classList.remove("activeSlide");
-  });
 });
 
 slider.addEventListener("scroll", () => {
-  Array.from(cards).forEach((el, index) => {
-    if (typeof window.orientation === "undefined") item = el;
-    else item = el.querySelector(".list_header");
-
-    if (isInViewport(item)) {
-      Array.from(slideBtn).forEach((btn) => {
-        if (btn.classList.contains("activeSlide"))
-          btn.classList.remove("activeSlide");
-      });
-      slideBtn[index].classList.add("activeSlide");
-    }
-  });
+  if (isInViewport(cards[0])) {
+    removeClass();
+    slideBtn[0].classList.add("activeSlide");
+  } else {
+    Array.from(cards).forEach((el, index) => {
+      if (typeof window.orientation === "undefined") item = el;
+      else item = el.querySelector(".list_header");
+      if (isInViewport(item)) {
+        removeClass();
+        slideBtn[index].classList.add("activeSlide");
+      }
+    });
+  }
 });
+
+function removeClass() {
+  Array.from(slideBtn).forEach((btn) => {
+    if (btn.classList.contains("activeSlide"))
+      btn.classList.remove("activeSlide");
+  });
+}
 
 let isDown = false;
 let startX;
