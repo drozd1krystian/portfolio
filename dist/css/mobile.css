@@ -11,8 +11,15 @@
   .px-4 {
     padding: 0 1rem;
   }
+  #skills .flex_container {
+    overflow: hidden;
+    margin-left: -1rem;
+  }
   #skills .card {
     padding: 0 0 2rem 0;
+    min-width: 100vw;
+    max-width: 100vw;
+    border-right: none;
   }
   #skills .card .list {
     -ms-flex-wrap: wrap;
