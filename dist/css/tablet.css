@@ -1,14 +1,35 @@
-@media only screen and (min-device-width: 1024px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 1.5) {
-  section,
-  #about,
-  #nav_bar a,
-  #contact h3 {
-    font-size: 1.6rem;
-    max-width: 1024px;
+@media only screen and (min-device-width: 1024px) and (max-width: 1799px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 1.5) {
+  *:not(body) {
+    font-size: 1.3rem;
   }
   #about,
   section .px-4 {
     padding-left: 3rem;
     padding-right: 3rem;
+  }
+  .about_content .disc {
+    width: 100%;
+  }
+}
+
+@media screen and (min-width: 1900px) {
+  *:not(body) {
+    font-size: 1.3rem;
+  }
+}
+
+@media screen and (min-width: 2500px) {
+  *:not(body) {
+    font-size: 1.6rem;
+  }
+  .about_content .disc {
+    width: 60%;
+  }
+  .about_content .photo {
+    height: 400px;
+    width: 400px;
+  }
+  #skills .list li img {
+    height: 100px;
   }
 }
