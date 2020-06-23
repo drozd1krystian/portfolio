@@ -15,3 +15,4 @@ My personal portfolio.
 ## Preview
 <a href="https://drozd1krystian.github.io/portfolio/dist/" target="_blank">Check it out here!</a>
 ## License
+All rights reserved by me.
