@@ -36,7 +36,12 @@ $(".line").on("click", function (e) {
 });
 
 slider.addEventListener("scroll", () => {
-  if (isInViewport(cards[0])) {
+  if (
+    isInViewport(cards[0]) ||
+    (window.innerWidth >= 1800 &&
+      isInViewport(cards[1]) &&
+      !isInViewport(cards[2]))
+  ) {
     removeClass();
     slideBtn[0].classList.add("activeSlide");
   } else {
