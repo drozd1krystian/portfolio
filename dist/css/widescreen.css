@@ -1,19 +1,108 @@
 @import url("https://fonts.googleapis.com/css?family=Roboto&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Roboto&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  font-family: "Roboto", sans-serif;
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.py-1 {
+  padding: 1rem 0;
+}
+
+.py-2 {
+  padding: 2rem 0;
+}
+
+.py-3 {
+  padding: 3rem 0;
+}
+
+.py-4 {
+  padding: 4rem 0;
+}
+
+.px-1 {
+  padding: 0 1rem;
+}
+
+.px-2 {
+  padding: 0 2rem;
+}
+
+.px-3 {
+  padding: 0 3rem;
+}
+
+.px-4 {
+  padding: 0 4rem;
+}
+
+.p1 {
+  padding: 1rem;
+}
+
+.p2 {
+  padding: 2rem;
+}
+
+.p3 {
+  padding: 3rem;
+}
+
+.p4 {
+  padding: 4rem;
+}
+
+.my-1 {
+  margin: 1rem 0;
+}
+
+.my-2 {
+  margin: 2rem 0;
+}
+
+.mt-3 {
+  margin-top: 3rem;
+}
+
 body {
   background: #222222;
+}
+
+.text_white, .bg_blue, .first_word, .btn, #nav_bar .links .link:hover, #projects .project::before {
+  color: #fff;
 }
 
 .bg_dark {
   color: #797979;
 }
 
+.bg_light, .icon_bg, .about_content .photo {
+  background: #fff;
+}
+
 .bg_blue {
-  color: #fff;
   background: #007ced;
 }
 
 .first_word {
-  color: #fff;
   font-weight: bold;
 }
 
@@ -21,21 +110,8 @@ body {
   color: #adadad;
 }
 
-.text_white {
-  color: #fff;
-}
-
-.bg_light {
-  background: #fff;
-  color: #333;
-}
-
 .small_header {
   letter-spacing: 1px;
-}
-
-.big_header {
-  color: #fff;
 }
 
 .flex_container {
@@ -57,7 +133,6 @@ body {
 }
 
 .icon_bg {
-  background: #fff;
   padding: 0.5rem;
   border-radius: 5px;
 }
@@ -68,7 +143,6 @@ body {
 
 .btn {
   border: 2px solid #007ced;
-  color: #fff;
   border-radius: 20px;
   padding: 0.7rem 3rem;
   -webkit-transition: all 0.3s ease;
@@ -190,10 +264,6 @@ body {
   z-index: -1;
 }
 
-#nav_bar .links .link:hover {
-  color: #fff;
-}
-
 #nav_bar .links .link:hover::after {
   opacity: 1;
   width: 100%;
@@ -220,7 +290,6 @@ body {
   padding: 2rem;
   width: 300px;
   height: 300px;
-  background: #fff;
   border-radius: 50%;
   border: 15px solid #444444;
   overflow: hidden;
@@ -371,7 +440,6 @@ body {
   position: absolute;
   text-align: center;
   background: #007ced;
-  color: #fff;
   -webkit-transition: all 0.3s ease;
   transition: all 0.3s ease;
   font-size: 1.5rem;
@@ -405,7 +473,7 @@ body {
 
 #projects .project .photo .technologies .technologie {
   padding: 0.3rem;
-  background: #525151;
+  background: #797979;
   border-radius: 5px;
   font-size: 1rem;
   margin: 5px;
@@ -504,4 +572,99 @@ body {
 #footer span {
   float: right;
   padding: 1rem;
+}
+
+@media screen and (max-width: 1024px) {
+  #nav_bar {
+    padding: 0.5rem 1rem;
+  }
+  .about_content .disc {
+    width: 100%;
+  }
+  .p3 {
+    padding: 3rem 1rem 1rem 1rem;
+  }
+  .px-4 {
+    padding: 0 1rem;
+  }
+  #skills .flex_container {
+    margin-left: -1rem;
+  }
+  #skills .flex_container > div {
+    overflow: auto;
+  }
+  #skills .card {
+    padding: 0 0 2rem 0;
+    min-width: 100vw;
+    max-width: 100vw;
+    border-right: none;
+  }
+  #skills .card .list {
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+  }
+  #skills .card .list li img {
+    margin: 0 1rem;
+  }
+  #projects .project {
+    width: 100%;
+    margin-bottom: 1rem;
+    border-left: none;
+    border-right: none;
+  }
+  #projects .project:nth-child(even) {
+    border-top: none;
+    border-left: none;
+  }
+  #projects .project:nth-child(odd) {
+    border-right: none;
+  }
+  #contact {
+    padding-bottom: 2rem;
+  }
+  #contact h3 {
+    font-size: 1rem;
+  }
+}
+
+@media screen and (min-width: 767px) and (max-width: 1024px) and (orientation: landscape) {
+  .about_content .disc {
+    width: 80%;
+  }
+}
+
+@media only screen and (min-device-width: 1024px) and (max-width: 1799px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 1.5) {
+  *:not(body) {
+    font-size: 1.3rem;
+  }
+  #about,
+  section .px-4 {
+    padding-left: 3rem;
+    padding-right: 3rem;
+  }
+}
+
+@media screen and (min-width: 1800px) {
+  *:not(body) {
+    font-size: 1.3rem;
+  }
+  #skills .slide .last {
+    display: none;
+  }
+}
+
+@media screen and (min-width: 2500px) {
+  *:not(body) {
+    font-size: 1.6rem;
+  }
+  .about_content .disc {
+    width: 60%;
+  }
+  .about_content .photo {
+    height: 400px;
+    width: 400px;
+  }
+  #skills .list li img {
+    height: 100px;
+  }
 }

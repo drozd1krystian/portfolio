@@ -1,41 +1,39 @@
 @import "config";
+@import "utilities";
 
 // Utility Classes
 body {
-  background: #222222;
+  background: $primary-color;
+}
+
+.text_white {
+  color: $light-color;
 }
 
 .bg_dark {
-  color: #797979;
+  color: $aluxury-color;
+}
+
+.bg_light {
+  background: $light-color;
 }
 
 .bg_blue {
-  color: #fff;
-  background: #007ced;
+  @extend .text_white;
+  background: $secondary-color;
 }
 
 .first_word {
-  color: #fff;
+  @extend .text_white;
   font-weight: bold;
 }
 
 .text {
-  color: rgb(173, 173, 173);
-}
-.text_white {
-  color: #fff;
-}
-
-.bg_light {
-  background: #fff;
-  color: #333;
+  color: $text-color;
 }
 
 .small_header {
   letter-spacing: 1px;
-}
-.big_header {
-  color: #fff;
 }
 
 .flex_container {
@@ -46,15 +44,15 @@ body {
 .link_disabled {
   pointer-events: none;
   cursor: default;
-  color: rgba(#007ced, 0.4);
+  color: rgba($secondary-color, 0.4);
 }
 
 .text_link {
-  color: #007ced;
+  color: $secondary-color;
 }
 
 .icon_bg {
-  background: #fff;
+  @extend .bg_light;
   padding: 0.5rem;
   border-radius: 5px;
 }
@@ -63,9 +61,13 @@ body {
   font-size: 1.3rem;
 }
 
+@mixin border($color: $secondary-color) {
+  border: 2px solid $color;
+}
+
 .btn {
-  border: 2px solid #007ced;
-  color: #fff;
+  @extend .text_white;
+  @include border();
   border-radius: 20px;
   padding: 0.7rem 3rem;
   transition: all 0.3s ease;
@@ -74,14 +76,14 @@ body {
   outline: none;
   font-size: 1rem;
   &:hover {
-    background: #007ced;
+    background: $secondary-color;
   }
 }
 
 .btn_light {
-  border: 2px solid #797979;
+  @include border($aluxury-color);
   &:hover {
-    background: #797979;
+    background: $aluxury-color;
   }
 }
 
@@ -99,7 +101,7 @@ body {
     left: 0;
     width: 30px;
     height: 2px;
-    background: #007ced;
+    background: $secondary-color;
   }
   &::before {
     content: "";
@@ -107,7 +109,7 @@ body {
     bottom: 0;
     width: 100%;
     height: 2px;
-    background: #444444;
+    background: $lighter-primary-color;
   }
 }
 
@@ -126,7 +128,7 @@ body {
   width: 100%;
   transition: all 0.3s ease;
   z-index: 100;
-  background: #222222;
+  background: $primary-color;
   .logo {
     display: flex;
     align-items: center;
@@ -157,15 +159,14 @@ body {
         transform: translate(-50%, -50%) skewX(-30deg);
         height: 100%;
         width: 0%;
-        background: #007ced;
+        background: $secondary-color;
         opacity: 0;
         transition: all 0.4s ease;
         z-index: -1;
       }
 
       &:hover {
-        color: #fff;
-
+        @extend .text_white;
         &::after {
           opacity: 1;
           width: 100%;
@@ -183,12 +184,12 @@ body {
   align-items: center;
 
   .photo {
+    @extend .bg_light;
     padding: 2rem;
     width: 300px;
     height: 300px;
-    background: #fff;
     border-radius: 50%;
-    border: 15px solid #444444;
+    border: 15px solid $lighter-primary-color;
     overflow: hidden;
     position: relative;
     box-shadow: 0 5px 10px 5px rgba(#000, 0.75);
@@ -232,7 +233,7 @@ body {
   .card {
     padding-bottom: 2rem;
     text-align: center;
-    border-right: 2px solid #797979;
+    border-right: 2px solid $aluxury-color;
     position: relative;
     &:last-child {
       border-right: none;
@@ -247,13 +248,13 @@ body {
       display: inline-block;
       width: 1.4rem;
       height: 0.4rem;
-      background: #797979;
+      background: $aluxury-color;
       cursor: pointer;
       transition: all 0.2s ease;
       user-select: none;
     }
     .activeSlide {
-      background: #007ced;
+      background: $secondary-color;
       width: 2rem;
     }
   }
@@ -274,16 +275,16 @@ body {
 #projects {
   .project {
     width: 50%;
-    border: 2px solid #007ced;
+    border: 2px solid $secondary-color;
     position: relative;
     display: flex;
     flex-direction: column;
     &:nth-child(even) {
-      border-left: 1px solid #007ced;
+      border-left: 1px solid $secondary-color;
       border-right: none;
     }
     &:nth-child(odd) {
-      border-right: 1px solid #007ced;
+      border-right: 1px solid $secondary-color;
       border-left: none;
     }
     &:nth-child(1n + 3) {
@@ -291,11 +292,11 @@ body {
     }
 
     &::before {
+      @extend .text_white;
       content: attr(aria-label);
       position: absolute;
       text-align: center;
-      background: #007ced;
-      color: #fff;
+      background: $secondary-color;
       transition: all 0.3s ease;
       font-size: 1.5rem;
       z-index: 2;
@@ -318,7 +319,7 @@ body {
         z-index: 2;
         .technologie {
           padding: 0.3rem;
-          background: #525151;
+          background: $aluxury-color;
           border-radius: 5px;
           font-size: 1rem;
           margin: 5px;
@@ -352,11 +353,11 @@ body {
       i {
         transition: all 0.3s ease;
         &:hover {
-          color: rgba(#007ced, 0.4);
+          color: rgba($secondary-color, 0.4);
         }
       }
       font-size: 2rem;
-      color: #007ced;
+      color: $secondary-color;
     }
     &:hover {
       &::before {
@@ -386,9 +387,12 @@ body {
 }
 
 #footer {
-  border-top: 2px solid #797979;
+  border-top: 2px solid $aluxury-color;
   span {
     float: right;
     padding: 1rem;
   }
 }
+
+@import "mobile";
+@import "tablet";

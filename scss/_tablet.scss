@@ -1,21 +1,26 @@
+@media screen and (min-width: 767px) and (max-width: 1024px) and (orientation: landscape) {
+  .about_content .disc {
+    width: 80%;
+  }
+}
+
+// iPad Pro
 @media only screen and (min-device-width: 1024px) and (max-width: 1799px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 1.5) {
   *:not(body) {
-    font-size: 1.3rem;
+    font-size: 1rem * 1.3;
   }
   #about,
   section .px-4 {
     padding-left: 3rem;
     padding-right: 3rem;
   }
-  .about_content .disc {
-    width: 100%;
-  }
 }
 
-@media screen and (min-width: 1900px) {
+@media screen and (min-width: 1800px) {
   *:not(body) {
-    font-size: 1.3rem;
+    font-size: 1rem * 1.3;
   }
+
   #skills .slide .last {
     display: none;
   }
@@ -23,15 +28,17 @@
 
 @media screen and (min-width: 2500px) {
   *:not(body) {
-    font-size: 1.6rem;
+    font-size: 1rem * 1.6;
   }
   .about_content .disc {
     width: 60%;
   }
+
   .about_content .photo {
     height: 400px;
     width: 400px;
   }
+
   #skills .list li img {
     height: 100px;
   }
