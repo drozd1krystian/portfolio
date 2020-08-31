@@ -75,8 +75,13 @@ body {
   cursor: pointer;
   outline: none;
   font-size: 1rem;
+  margin-right: 10px;
   &:hover {
     background: $secondary-color;
+  }
+
+  &:disabled {
+    color: $text-color;
   }
 }
 
@@ -84,6 +89,26 @@ body {
   @include border($aluxury-color);
   &:hover {
     background: $aluxury-color;
+  }
+}
+
+.btn_dark {
+  @extend .btn;
+  color: $light-color;
+  background: $secondary-color;
+  &:hover {
+    background: transparent;
+    color: $primary-color;
+  }
+}
+
+.btn_code {
+  @extend .btn;
+  @include border($primary-color);
+  color: $primary-color;
+  &:hover {
+    background: $primary-color;
+    color: $light-color;
   }
 }
 
@@ -210,166 +235,109 @@ body {
   padding-bottom: 2rem;
   position: relative;
   .flex_container {
-    flex-direction: row;
     overflow: hidden;
     flex-wrap: initial;
     position: relative;
-    & > div {
-      display: flex;
-      transition: all 0.5s ease;
-      will-change: transform;
-      position: relative;
-      overflow: scroll;
-      overflow-y: hidden;
-      &::-webkit-scrollbar {
-        width: 0px; /* Remove scrollbar space */
-        background: transparent; /* Optional: just make scrollbar invisible */
-      }
-      &.active {
-        cursor: grabbing;
-      }
-    }
-  }
-  .card {
-    padding-bottom: 2rem;
-    text-align: center;
-    border-right: 2px solid $aluxury-color;
-    position: relative;
-    &:last-child {
-      border-right: none;
-    }
-  }
-  .slide {
-    position: absolute;
-    bottom: 0;
-    left: 50%;
-    transform: translateX(-50%);
-    .line {
-      display: inline-block;
-      width: 1.4rem;
-      height: 0.4rem;
-      background: $aluxury-color;
-      cursor: pointer;
-      transition: all 0.2s ease;
-      user-select: none;
-    }
-    .activeSlide {
-      background: $secondary-color;
-      width: 2rem;
-    }
   }
   .list {
     display: flex;
-    justify-content: center;
     align-items: center;
     margin-top: 1rem;
-    li img {
-      height: 60px;
-      min-width: 60px;
-      max-width: 150px;
-      margin: 0 2rem;
+    width: 50%;
+    flex-wrap: wrap;
+    li {
+      width: 50%;
+      display: flex;
+      align-items: center;
+      .skill_title {
+        margin-left: 10px;
+      }
     }
+    li img {
+      height: 30px;
+      width: 30px;
+      margin: 0 10px;
+    }
+  }
+  .side_img {
+    width: 50%;
+    min-height: 400px;
+    background: url("../img/computer.jpg") center center/cover no-repeat;
   }
 }
 
 #projects {
+  background: #fff;
   .project {
-    width: 50%;
-    border: 2px solid $secondary-color;
+    width: 100%;
     position: relative;
     display: flex;
-    flex-direction: column;
-    &:nth-child(even) {
-      border-left: 1px solid $secondary-color;
-      border-right: none;
-    }
-    &:nth-child(odd) {
-      border-right: 1px solid $secondary-color;
-      border-left: none;
-    }
-    &:nth-child(1n + 3) {
-      border-top: none;
-    }
-
-    &::before {
-      @extend .text_white;
-      content: attr(aria-label);
-      position: absolute;
-      text-align: center;
-      background: $secondary-color;
-      transition: all 0.3s ease;
-      font-size: 1.5rem;
-      z-index: 2;
-      width: 100%;
-      opacity: 0;
-    }
+    margin: 30px 0 60px 0;
+    border-radius: 15px;
     .photo {
       position: relative;
-      img {
-        width: 100%;
-      }
-      .technologies {
-        display: flex;
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        opacity: 0;
-        transition: all 0.2s ease;
-        z-index: 2;
-        .technologie {
-          padding: 0.3rem;
-          background: $aluxury-color;
-          border-radius: 5px;
-          font-size: 1rem;
-          margin: 5px;
+      width: 50%;
+      z-index: 2;
+      .img_wrapper {
+        position: relative;
+        &::after {
+          content: "";
+          position: absolute;
+          top: -30px;
+          left: -30px;
+          width: 100%;
+          height: 100%;
+          background: lighten($secondary-color, 10%);
+          z-index: 1;
+          border-radius: 15px;
         }
       }
-      &::after {
-        content: "";
-        position: absolute;
-        top: 0;
-        left: 0;
+
+      img {
         width: 100%;
-        height: 0;
-        background: rgba(#000, 0.8);
-        opacity: 0;
-        transition: all 0.2s ease;
-        z-index: 1;
+        border-radius: 15px;
+        position: relative;
+        z-index: 2;
+        box-shadow: 3px 3px 6px 1px lighten($primary-color, 50%);
       }
     }
     .disc {
-      flex-grow: 1;
       position: relative;
       display: flex;
       flex-direction: column;
+      width: 50%;
+      .project_title {
+        font-size: 2rem;
+        margin-bottom: 30px;
+      }
+      .technologies {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        transition: all 0.2s ease;
+        .technologie {
+          padding: 0.5rem 0.3rem;
+          font-size: 1.2rem;
+          display: flex;
+          align-items: center;
+          img {
+            width: 20px;
+            height: 20px;
+            margin-right: 5px;
+          }
+        }
+      }
     }
     .project_links {
       position: relative;
-      flex-grow: 1;
       display: flex;
       justify-content: center;
       align-items: flex-end;
-      i {
-        transition: all 0.3s ease;
-        &:hover {
-          color: rgba($secondary-color, 0.4);
-        }
-      }
-      font-size: 2rem;
+      font-size: 1.1rem;
       color: $secondary-color;
     }
-    &:hover {
-      &::before {
-        opacity: 1;
-      }
-      .photo .technologies {
-        opacity: 1;
-      }
-      .photo::after {
-        opacity: 1;
-        height: calc(100% - 4px);
-      }
+
+    &:first-of-type {
+      margin-top: 100px;
     }
   }
 }

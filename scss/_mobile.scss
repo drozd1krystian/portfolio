@@ -1,4 +1,4 @@
-@media screen and (max-width: 1024px) {
+@media screen and (max-width: 1023px) {
   #nav_bar {
     padding: 0.5rem 1rem;
   }
@@ -16,38 +16,64 @@
   }
   #skills {
     .flex_container {
-      margin-left: -1rem;
-      & > div {
-        overflow: auto;
-      }
-    }
-    .card {
-      padding: 0 0 2rem 0;
-      min-width: 100vw;
-      max-width: 100vw;
-      border-right: none;
+      flex-wrap: wrap;
       .list {
-        flex-wrap: wrap;
-        li img {
-          margin: 0 1rem;
-        }
+        width: 100%;
+      }
+      .side_img {
+        display: none;
       }
     }
   }
 
-  #projects .project {
-    width: 100%;
-    margin-bottom: 1rem;
-    border-left: none;
-    border-right: none;
-    &:nth-child(even) {
-      border-top: none;
+  .section_info {
+    max-width: 100%;
+  }
+
+  #projects {
+    .project {
+      width: 100%;
+      margin-bottom: 20px;
       border-left: none;
-    }
-    &:nth-child(odd) {
       border-right: none;
+      flex-direction: column;
+
+      .disc,
+      .photo {
+        width: 100%;
+        .img_wrapper::after {
+          display: none;
+        }
+      }
+      .photo {
+        order: -1;
+        margin-bottom: 10px;
+        img {
+          box-shadow: 1px 10px 15px 1px lighten($primary-color, 60%);
+        }
+      }
+
+      .disc {
+        margin: 0;
+        .project_title {
+          margin: 10px 0 5px 0;
+        }
+        .project_links {
+          flex-wrap: wrap;
+          a {
+            width: 100%;
+            text-align: center;
+            margin-top: 10px;
+          }
+        }
+      }
+
+      &:first-of-type {
+        margin-top: 10px;
+      }
     }
   }
+
   #contact {
     padding-bottom: 2rem;
     h3 {
