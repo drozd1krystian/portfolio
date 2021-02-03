@@ -417,6 +417,14 @@ body {
   border-radius: 15px;
 }
 
+#projects .project:nth-child(odd) .dics {
+  margin-right: 50px !important;
+}
+
+#projects .project:nth-child(even) .dics {
+  margin-left: 50px !important;
+}
+
 #projects .project .photo {
   position: relative;
   width: 50%;
