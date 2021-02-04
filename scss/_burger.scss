@@ -1,0 +1,76 @@
+.burger {
+  display: none;
+  div {
+    width: 40px;
+    height: 5px;
+    background: #fff;
+    margin: 5px;
+  }
+  .line-2 {
+    width: 30px;
+  }
+  .line-3 {
+    width: 25px;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  #nav_bar {
+    .links {
+      flex-direction: column;
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 0;
+      height: 0;
+      background: #333;
+      justify-content: center;
+      align-items: center;
+      transition: all 0.3s ease-in-out;
+      z-index: 102;
+      overflow: hidden;
+      .link {
+        height: initial;
+        &:hover::after {
+          display: none;
+        }
+      }
+      a {
+        color: #fff;
+      }
+    }
+    .active {
+      height: 100vh;
+      width: 100%;
+      transform: rotate(360deg);
+    }
+  }
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+  .burger {
+    display: block;
+    position: relative;
+    z-index: 102;
+    div {
+      transition: all 0.5s ease-in-out;
+    }
+  }
+  .toggle .line-1 {
+    transform: rotate(-45deg) translate(-7px, 8px);
+    width: 35px;
+  }
+  .toggle .line-2 {
+    opacity: 0;
+    width: 35px;
+  }
+  .toggle .line-3 {
+    transform: rotate(45deg) translate(-6px, -7px);
+    width: 35px;
+  }
+}
