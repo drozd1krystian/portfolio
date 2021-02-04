@@ -108,7 +108,7 @@ body {
 }
 
 .bg_dark {
-  color: #797979;
+  color: #adadad;
 }
 
 .bg_light, .icon_bg, .about_content .photo {
@@ -400,7 +400,7 @@ body {
 #skills .side_img {
   width: 50%;
   min-height: 400px;
-  background: url("../img/computer.jpg") center center/cover no-repeat;
+  background: url("../img/computer.webp") center center/cover no-repeat;
 }
 
 #projects {

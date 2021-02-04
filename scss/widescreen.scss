@@ -11,7 +11,7 @@ body {
 }
 
 .bg_dark {
-  color: $aluxury-color;
+  color: $text-color;
 }
 
 .bg_light {
@@ -262,7 +262,7 @@ body {
   .side_img {
     width: 50%;
     min-height: 400px;
-    background: url("../img/computer.jpg") center center/cover no-repeat;
+    background: url("../img/computer.webp") center center/cover no-repeat;
   }
 }
 
